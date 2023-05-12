@@ -1,6 +1,6 @@
 ﻿body {
-    background-color: black;
-    --text-color: #ebc97a;
+    background-color: #282A3A;
+    --text-color: #C69749;
     color: var(--text-color);
     display: flex;
     flex-direction: column;
@@ -27,30 +27,41 @@ img {
     object-fit: contain;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
 }
 
-h2 {
-    color: var(--text-color);
-    margin-bottom: 20px;
-    font-size: clamp(2em, 5vw, 4em); /* Automated font size with small bleed */
+.waviy {
+    position: relative;
+    font-size: 40px;
 }
 
-p, h1 {
+.waviy span {
+    position: relative;
+    display: inline-block;
+    color: #4F4557;
+    text-transform: uppercase;
+    margin-right: -12px;
+    transform: translateY(calc(10px * var(--i)));
+}
+
+p {
     color: var(--text-color);
     max-width: 100%; /* Adjust text width to fit container width */
     font-size: clamp(1em, calc(0.8em + 1.5vw), 2em); /* Automated font size with small bleed */
     text-align: justify;
+}
+
+h2{
+    color: #C69749;
+    font-size: 60px;
+    margin-top: 210px;
+    margin-bottom: -5px;
+}
+
+p{
     margin: 0 auto; /* Center the text horizontally */
 }
 
-h1 {
-    margin-bottom: 20px;
-    animation: float 15s ease-in-out infinite alternate;
-    white-space: nowrap; /* Prevent title from wrapping to multiple lines */
-    overflow: hidden; /* Hide overflowing text */
-    text-overflow: ellipsis; /* Display ellipsis for overflowed text */
-    font-size: calc(1em + 2vw); /* Title font size based on viewport width */
-}
 
 a {
     text-decoration: underline;
@@ -72,11 +83,6 @@ a {
 
 /* Media queries for mobile devices */
 @media (max-width: 768px) {
-    h1,
-    h2 {
-        font-size: clamp(1.5em, 5vw, 3em);
-    }
-
     p {
         font-size: clamp(0.8em, calc(0.6em + 3vw), 1.5em); /* Adjusted font size for mobile devices */
     }
