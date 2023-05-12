@@ -1,45 +1,73 @@
 ﻿body {
     background-color: black;
-    --text-color: #ebc97a; /* Define the CSS variable for text color */
-    color: var(--text-color); /* Off-white text color */
+    --text-color: #ebc97a;
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Adjust the height as needed */
+    height: 100vh;
     text-align: center;
 }
 
 img {
-    width: 250px;
-    height: 250px;
+    max-width: 100%;
+    max-height: 512px; /* Set the maximum height for the image */
+    width: auto;
+    height: auto;
 }
 
 h1,
 h2 {
     color: var(--text-color);
-    margin-bottom: 20px; /* Adjustable margin */
-    max-width: 250px; /* Set the maximum width to 250 pixels */
-    margin-left: auto; /* Align the text to the left within the box */
-    margin-right: auto; /* Align the text to the right within the box */
-    text-align: left; /* Adjust the text alignment within the box */
+    margin-bottom: 20px;
+    font-size: 4em;
 }
 
 p {
-    color: var(--text-color); /* Set text color for paragraphs */
-    margin-bottom: 20px; /* Adjustable margin */
-    width: 250px; /* Set the width to 250 pixels */
-    margin-left: auto; /* Align the text to the left within the box */
-    margin-right: auto; /* Align the text to the right within the box */
-    text-align: left; /* Adjust the text alignment within the box */
+    color: var(--text-color);
+    margin-bottom: 20px;
+    max-width: 512px;
+    font-size: 2em;
+    text-align: justify;
 }
 
 h1 {
-    margin-bottom: 20px; /* Additional margin for the heading */
+    margin-bottom: 100px;
+    animation: float 3s ease-in-out infinite alternate;
 }
 
 a {
     text-decoration: underline;
     color: var(--text-color);
     cursor: pointer;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Media queries for mobile devices */
+@media (max-width: 768px) {
+    h1,
+    h2 {
+        font-size: 3em;
+    }
+
+    p {
+        font-size: 1.5em;
+    }
+
+    img {
+        max-width: 512px;
+        max-height: none; /* Remove the maximum height for the image */
+    }
 }
