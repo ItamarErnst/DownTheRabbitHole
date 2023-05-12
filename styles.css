@@ -8,7 +8,8 @@
     justify-content: center;
     height: 100vh;
     text-align: center;
-    padding: 0 10px; /* Small bleed on the left and right */
+    padding: 0 20px; /* Increased bleed on the left and right */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .container {
@@ -16,35 +17,29 @@
     width: auto;
     height: auto;
     overflow: hidden;
+    max-width: 100%; /* Limit container width to prevent overflow */
 }
 
 img {
     display: block;
-    max-width: clamp(300px, calc(100% - 40px), 512px); /* Automated maximum width with small bleed */
-    width: auto;
+    max-width: 90%; /* Adjust image to fit container width */
     height: auto;
     object-fit: contain;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
 }
 
-h2 {
+h2,p,h1 {
     color: var(--text-color);
-    margin-bottom: 20px;
-    font-size: clamp(2em, 5vw, 4em); /* Automated font size with small bleed */
-}
-
-p,h1 {
-    color: var(--text-color);
-    max-width: clamp(300px, calc(100% - 40px), 512px); /* Automated maximum width with small bleed */
+    max-width: 90%; /* Adjust text width to fit container width */
     font-size: clamp(1em, calc(0.8em + 1.5vw), 2em); /* Automated font size with small bleed */
     text-align: justify;
     margin: 0 auto; /* Center the text horizontally */
 }
 
-h1 {
+h1{
     margin-bottom: 20px;
-    animation: float 15s ease-in-out infinite alternate;
 }
 
 a {
@@ -66,10 +61,10 @@ a {
 }
 
 /* Media queries for mobile devices */
-@media (max-width: 1080px) {
+@media (max-width: 768px) {
     h1,
     h2 {
-        font-size: clamp(1.5em, 5vw, 3em);
+        font-size: clamp(2.5em, 20vw, 3.8em);
     }
 
     p {
