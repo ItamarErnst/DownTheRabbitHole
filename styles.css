@@ -1,0 +1,45 @@
+﻿body {
+    background-color: black;
+    --text-color: #ebc97a; /* Define the CSS variable for text color */
+    color: var(--text-color); /* Off-white text color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Adjust the height as needed */
+    text-align: center;
+}
+
+img {
+    width: 250px;
+    height: 250px;
+}
+
+h1,
+h2 {
+    color: var(--text-color);
+    margin-bottom: 20px; /* Adjustable margin */
+    max-width: 250px; /* Set the maximum width to 250 pixels */
+    margin-left: auto; /* Align the text to the left within the box */
+    margin-right: auto; /* Align the text to the right within the box */
+    text-align: left; /* Adjust the text alignment within the box */
+}
+
+p {
+    color: var(--text-color); /* Set text color for paragraphs */
+    margin-bottom: 20px; /* Adjustable margin */
+    width: 250px; /* Set the width to 250 pixels */
+    margin-left: auto; /* Align the text to the left within the box */
+    margin-right: auto; /* Align the text to the right within the box */
+    text-align: left; /* Adjust the text alignment within the box */
+}
+
+h1 {
+    margin-bottom: 20px; /* Additional margin for the heading */
+}
+
+a {
+    text-decoration: underline;
+    color: var(--text-color);
+    cursor: pointer;
+}
