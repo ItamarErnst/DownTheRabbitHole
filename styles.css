@@ -6,7 +6,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh; /* Ensure the body expands to the bottom */
     text-align: center;
     padding: 0 20px; /* Increased bleed on the left and right */
     overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -22,24 +22,34 @@
 
 img {
     display: block;
-    max-width: 90%; /* Adjust image to fit container width */
+    max-width: 100%; /* Adjust image to fit container width */
     height: auto;
     object-fit: contain;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
 }
 
-h2,p,h1 {
+h2 {
     color: var(--text-color);
-    max-width: 90%; /* Adjust text width to fit container width */
+    margin-bottom: 20px;
+    font-size: clamp(2em, 5vw, 4em); /* Automated font size with small bleed */
+}
+
+p, h1 {
+    color: var(--text-color);
+    max-width: 100%; /* Adjust text width to fit container width */
     font-size: clamp(1em, calc(0.8em + 1.5vw), 2em); /* Automated font size with small bleed */
     text-align: justify;
     margin: 0 auto; /* Center the text horizontally */
 }
 
-h1{
+h1 {
     margin-bottom: 20px;
+    animation: float 15s ease-in-out infinite alternate;
+    white-space: nowrap; /* Prevent title from wrapping to multiple lines */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Display ellipsis for overflowed text */
+    font-size: calc(1em + 2vw); /* Title font size based on viewport width */
 }
 
 a {
@@ -64,7 +74,7 @@ a {
 @media (max-width: 768px) {
     h1,
     h2 {
-        font-size: clamp(2.5em, 20vw, 3.8em);
+        font-size: clamp(1.5em, 5vw, 3em);
     }
 
     p {
