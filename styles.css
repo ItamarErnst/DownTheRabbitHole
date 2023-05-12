@@ -28,16 +28,14 @@ img {
     margin-right: auto;
 }
 
-h1,
 h2 {
     color: var(--text-color);
     margin-bottom: 20px;
     font-size: clamp(2em, 5vw, 4em); /* Automated font size with small bleed */
 }
 
-p {
+p,h1 {
     color: var(--text-color);
-    margin-bottom: 20px;
     max-width: clamp(300px, calc(100% - 40px), 512px); /* Automated maximum width with small bleed */
     font-size: clamp(1em, calc(0.8em + 1.5vw), 2em); /* Automated font size with small bleed */
     text-align: justify;
@@ -46,7 +44,7 @@ p {
 
 h1 {
     margin-bottom: 20px;
-    animation: float 3s ease-in-out infinite alternate;
+    animation: float 15s ease-in-out infinite alternate;
 }
 
 a {
@@ -68,7 +66,7 @@ a {
 }
 
 /* Media queries for mobile devices */
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
     h1,
     h2 {
         font-size: clamp(1.5em, 5vw, 3em);
